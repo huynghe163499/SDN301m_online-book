@@ -1,6 +1,5 @@
 import Genre from "../models/genre.js" 
 
-
 const getAllGenres = async (req) => {
     try {
         const genres = await Genre.find()

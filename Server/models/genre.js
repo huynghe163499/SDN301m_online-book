@@ -1,13 +1,13 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const genre = new Schema({
-  title: { 
-    type: String ,
+const Genres = new Schema({
+  title: {
+    type: String,
     required: [true, 'nhap title']
   },
   decription: {
-    type: String ,
+    type: String,
     required: true
   },
   code: {
@@ -16,7 +16,7 @@ const genre = new Schema({
   }
 })
 
-const Genres = mongoose.model('genre', genre)
+const GenresModels = mongoose.model('Genres', Genres)
 
-export default Genres
+export default GenresModels
 

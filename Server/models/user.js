@@ -1,26 +1,17 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const User = new Schema({
-  firstName: {
-    type: String ,
-    require: true
-  },
-  lastName: {
-    type: String ,  
-    require: true
-  },
-  nickName: {
+const Users = new Schema({
+  fullName: {
     type: String,
     require: true
   },
-  email: { 
+  email: {
     type: String,
-    unique: [true, 'Email have already been!'], 
+    unique: [true, 'Email have already been!'],
   },
-  password: { 
-    type: String, 
-    require: true
+  password: {
+    type: String,
   },
   address: {
     type: String,
@@ -30,36 +21,38 @@ const User = new Schema({
     type: String,
     default: null
   },
-  description: { 
-    type: String, 
-    default: null 
+  description: {
+    type: String,
+    default: null
   },
-  isStaff: { 
-    type: Boolean, 
-    default: false 
+  roleId: {
+    type: Number,
+    require: true
   },
-  avatarPath: { 
-    type: String,  
+  avatarPath: {
+    type: String,
     default: "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
   },
-//   ResfreshToken: {
-//     type: String, 
-//     default: null 
-//   },
+  resFreshToken: {
+    type: String,
+    default: null
+  },
   favoriteBook: {
-    type: Schema.Types.ObjectId,
-    ref: 'book',
+    type: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Books',
+    }],
     default: []
   },
-  status: { 
-    type: Boolean, 
-    default: true 
+  status: {
+    type: Boolean,
+    default: true
   },
 }, {
-    timestamps: true
+  timestamps: true
 })
 
-const UsersModel = mongoose.model('user', User)
+const UsersModel = mongoose.model('Users', Users)
 
 export default UsersModel
 

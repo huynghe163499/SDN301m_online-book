@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const Chapter = new Schema({
+const Chapters = new Schema({
   name: {
     type: String,
     required: true
@@ -12,14 +12,14 @@ const Chapter = new Schema({
   },
   bookid: {
     type: Schema.Types.ObjectId,
-    ref: 'book'
+    ref: 'Books'
   },
 
 }, {
-    timestamps: true,
+  timestamps: true,
 })
 
-const ChapterModel = mongoose.model('chapter', Chapter)
+const ChaptersModel = mongoose.model('Chapters', Chapters)
 
-export default ChapterModel
+export default ChaptersModel
 

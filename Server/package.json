@@ -1,5 +1,5 @@
 {
-  "name": "2_webserver",
+  "name": "online-book",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
