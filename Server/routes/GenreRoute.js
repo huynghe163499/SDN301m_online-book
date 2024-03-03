@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import GenreController from '../controllers/GenreController.js'
+import GenreController from '../controllers/genreController.js'
 
 router.get('/getAllGenres',
   GenreController.getAllGenres

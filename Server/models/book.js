@@ -1,40 +1,27 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
-
-// const chapterSchema = new Schema({
-//   title: {
-//     type: String,
-//     require: true
-//   },
-//   chapterid:{
-//     type: Number,
-//     require: true
-//   }
-// }, {
-//   timestamps: true
-// })
-
-const book = new Schema({
+const books = new Schema({
   title: {
     type: String,
     require: true
   },
   author: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'user',
     require: true
   },
   decription: {
     type: String,
     require: true
   },
-  // chapters: [chapterSchema],
+ 
   rate: {
     type: Number
   },
   accessTimes: {
     type: Number
   },
-  avataPath:{
+  avatarPath:{
     type: String,
     require: true
   },
@@ -45,7 +32,6 @@ const book = new Schema({
   genres: {
     type: Schema.Types.ObjectId,
     ref: 'genre',
-    default: []
   },
 
   likes: {
@@ -60,6 +46,6 @@ const book = new Schema({
   timestamps: true
 })
 
-const Book = mongoose.model('book', book)
+const BookModel = mongoose.model('books', books)
 
-export default Book
+export default BookModel

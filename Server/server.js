@@ -1,5 +1,5 @@
 // khai bao module express de tao web server
-import express, { json } from 'express'
+import express from 'express'
 import * as dotenv from 'dotenv'
 // import {productRouter} from './routes/index.js'
 import connectDB from './database.js'

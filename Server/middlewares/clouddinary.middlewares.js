@@ -15,7 +15,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary,
     params: {
-        folder: `LAB3`,
+        folder: `SDN301m`,
         resource_type: 'auto',
         allowedFormats: ['jpg', 'png', 'jpeg'],
     },

@@ -1,4 +1,4 @@
-import GenreDao from '../dao/GenreDao.js'
+import GenreDao from '../dao/genreDao.js'
 
 const getAllGenres = async (req, res) => {
     try {
