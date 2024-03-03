@@ -1,28 +1,30 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const comments = new Schema({
+const Comments = new Schema({
   content: {
     type: String,
     require: true
   },
-  userid: {
+  users: {
     type: Schema.Types.ObjectId,
-    ref: 'user'
+    ref: 'Users',
+    require: true
   },
-  bookid: {
+  book: {
     type: Schema.Types.ObjectId,
-    ref: 'book'
+    ref: 'Books',
+    require: true
   },
   likes: {
     type: Number,
     default: 0
   }
 }, {
-    timestamps: true,
+  timestamps: true,
 })
 
-const CommentSchema = mongoose.model('comment', comments)
+const CommentsModel = mongoose.model('Comments', Comments)
 
-export default CommentSchema
+export default CommentsModel
 

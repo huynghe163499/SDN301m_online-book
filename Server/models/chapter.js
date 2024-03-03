@@ -16,13 +16,14 @@ const Chapters = new Schema({
   },
   bookid: {
     type: Schema.Types.ObjectId,
-    ref: 'book'
+    ref: 'Books'
   },
 
 }, {
-    timestamps: true,
+  timestamps: true,
 })
-const ChapterModel = mongoose.model('chapters', Chapters)
 
-export default ChapterModel
+const ChaptersModel = mongoose.model('Chapters', Chapters)
+
+export default ChaptersModel
 

@@ -1,27 +1,27 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
-const books = new Schema({
+
+const Books = new Schema({
   title: {
     type: String,
     require: true
   },
   author: {
-    type: Schema.Types.ObjectId,
-    ref: 'user',
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Users',
     require: true
   },
   decription: {
     type: String,
     require: true
   },
- 
   rate: {
     type: Number
   },
   accessTimes: {
     type: Number
   },
-  avatarPath:{
+  avatarPath: {
     type: String,
     require: true
   },
@@ -31,9 +31,9 @@ const books = new Schema({
   },
   genres: {
     type: Schema.Types.ObjectId,
-    ref: 'genre',
+    ref: 'Genres',
+    default: []
   },
-
   likes: {
     type: Number,
     default: 0
@@ -46,6 +46,6 @@ const books = new Schema({
   timestamps: true
 })
 
-const BookModel = mongoose.model('books', books)
+const BooksModel = mongoose.model('Books', Books)
 
-export default BookModel
+export default BooksModel
