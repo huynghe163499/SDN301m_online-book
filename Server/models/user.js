@@ -33,7 +33,7 @@ const Users = new Schema({
     type: String,
     default: "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
   },
-  resFreshToken: {
+  resfreshToken: {
     type: String,
     default: null
   },

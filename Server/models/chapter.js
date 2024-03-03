@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const Chapters = new Schema({
-  chapterId:{
+  chapterId: {
     type: Number,
     require: true
   },
@@ -14,7 +14,7 @@ const Chapters = new Schema({
     type: String,
     required: true
   },
-  bookid: {
+  bookId: {
     type: Schema.Types.ObjectId,
     ref: 'Books'
   },

@@ -4,9 +4,6 @@ import { accessToken, refreshToken } from "../utils/jwt.js"
 import bcrypt from "bcrypt"
 const saltRounds = 10
 
-import cloudinary from "cloudinary"
-const cloudinaryV2 = cloudinary.v2
-
 const checkEmailExist = async (email) => {
   let check = true
   const user = await User.findOne({ email })
@@ -81,7 +78,7 @@ const registerByGoogle = async (req) => {
       email: email,
       fullName: given_name,
       avatarPath: picture,
-      resFreshToken: refresh_token,
+      resfreshToken: refresh_token,
       roleId: roleId,
     })
     return { newUser, msg: "Đăng ký tài khoản thành công" }
