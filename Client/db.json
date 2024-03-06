@@ -1,0 +1,81 @@
+{
+  "products": [
+    {
+      "name": "Iphone 9",
+      "description": "Ipnohe 9 is goods of Apple's smart phone",
+      "price": 245,
+      "category": 1,
+      "id": 1
+    },
+    {
+      "name": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "category": 1,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "category": 2
+    },
+    {
+      "id": 4,
+      "name": "OPPO F19",
+      "description": "OPPO F19 is officially announced on April 2021.",
+      "price": 280,
+      "category": 3
+    },
+    {
+      "id": 0.3323047159307575,
+      "name": "Iphone 15 Promax",
+      "description": "Iphone 15 Promax is new product of Apple",
+      "price": 5000,
+      "category": 1
+    },
+    {
+      "id": 0.6816392789345074,
+      "name": "SamSung Galaxy S",
+      "description": "That is new product of SumSung",
+      "price": 12345,
+      "category": 2
+    },
+    {
+      "id": 0.3599133872405249,
+      "name": "Iphone 11",
+      "description": "Product of Apple",
+      "price": 1000,
+      "category": 1
+    },
+    {
+      "id": 0.7292173248445435,
+      "name": "OPPO NEO 5",
+      "description": "This is my first smart phone",
+      "price": 500,
+      "category": 3
+    },
+    {
+      "id": 0.8462031829458987,
+      "name": "grwrgeb",
+      "description": "krgerger",
+      "price": 33333,
+      "category": 3
+    }
+  ],
+  "categories": [
+    {
+      "name": "Iphone",
+      "id": 1
+    },
+    {
+      "name": "Samsung",
+      "id": 2
+    },
+    {
+      "name": "Oppo",
+      "id": 3
+    }
+  ]
+}

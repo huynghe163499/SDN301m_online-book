@@ -1,84 +1,31 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import STORAGE, { getStorage } from "src/lib/storage"
-import ModalLoading from "./components/Modal/Loading"
-import { ACCOUNT_TYPE_ID } from "./constants/constants"
-import {
-  getListSystemCate,
-  getListSystemKey,
-  setListTabs,
-  setUserInfo,
-} from "./redux/appGlobal"
-import AppRouter from "./router/AppRouter"
-// import "./App.scss"
-import { Spin } from "antd"
+// import DefaultLayout from "./layout";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import './app.css'
+import FollowPage from "./pages/FollowPage";
+import GenrePage from "./pages/GenrePage";
+import RankPage from "./pages/RankPage";
+import TrangDanhMuc from "./pages/TrangDanhMuc";
+import NotiFicationPage from "./pages/NotiPage";
 
 function App() {
-  const isLogin = getStorage(STORAGE.TOKEN)
-  const dispatch = useDispatch()
-  const { modalLoading } = useSelector(state => state.common)
-  const [loading, setLoading] = useState(false)
-
-  const getList = async () => {
-    try {
-      setLoading(true)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    getList()
-  }, [])
-
-  useEffect(() => {
-    if (!!isLogin) {
-      getData()
-    }
-  }, [isLogin])
-
-  const getSystemKey = async () => {
-    // const res = await CommonService.getSystemKey("All")
-    // if (res.IsError) return
-    // dispatch(getListSystemKey(res.Object))
-  }
-  const getSystemCate = async () => {
-    // const resSystem = await SystemCateService.getForCombobox()
-    // if (resSystem?.isError) return
-    // dispatch(getListSystemCate(resSystem.Object))
-  }
-  const getData = async () => {
-    try {
-      setLoading(true)
-      dispatch(setUserInfo(getStorage(STORAGE.USER_INFO)))
-      if (
-        getStorage(STORAGE.USER_INFO)?.AccountType !== ACCOUNT_TYPE_ID.HocVien
-      ) {
-        // const resp = await RoleService.getListTab()
-        // if (resp.isOk) {
-        //   dispatch(setListTabs(resp.Object || []))
-        // }
-      }
-      getSystemKey()
-      getSystemCate()
-    } finally {
-      setLoading(false)
-    }
-  }
   return (
-    <div className="layout-center">
-      <div className="layout-max-width">
-        {loading ? (
-          <div className="loading-center" style={{ height: "100vh" }}>
-            <Spin />
-          </div>
-        ) : (
-          <AppRouter />
-        )}
-      </div>
-      {!!modalLoading && <ModalLoading />}
-    </div>
-  )
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/theo-doi"  element={<FollowPage/>}/>
+          <Route path="/the-loai"  element={<GenrePage/>}/>
+          <Route path="/xep-hang"  element={<RankPage/>}/>
+          <Route path="/danh-muc"  element={<TrangDanhMuc/>}/>
+          <Route path="/thong-tin"  element={<NotiFicationPage/>}/>
+        </Routes>
+      </BrowserRouter>
+
+</div>
+  );
 }
 
-export default App
+
+export default App;
+   
