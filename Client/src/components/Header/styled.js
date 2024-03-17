@@ -14,7 +14,7 @@ export const PrevHeader = styled.div `
         font-weight: 600;
         font-size: 15px;
         height: 100%;
-        width: 80px;
+        width: 90px;
         justify-content: center;
         align-items: center;
 
@@ -30,7 +30,6 @@ export const HeaderContainer = styled.div `
     height: 50px;
     background-color: #81FB89;
     display: flex;
-
 `
 
 export const CusLink = styled(NavLink) `

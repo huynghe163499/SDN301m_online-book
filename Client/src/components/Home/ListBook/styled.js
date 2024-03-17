@@ -11,6 +11,21 @@ export const PageContainer = styled.div `
     }
 
     .history, .following, .rank {
-        border: 1px solid #E2E2E2
+        border: 1px solid #E2E2E2;
+        width: 100%;
+    }
+
+    .zoom-on-hover {
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s;
+    }
+
+    .zoom-on-hover:hover .zoom-image {
+        transform: scale(1.1);
+    }
+
+    .zoom-image {
+        transition: transform 0.3s;
     }
 `

@@ -7,6 +7,8 @@
     "@ant-design/icons": "^5.2.6",
     "@ant-design/maps": "^1.0.7",
     "@ant-design/react-native": "^5.0.4",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-pdf-viewer/core": "^3.10.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@testing-library/jest-dom": "^5.17.0",

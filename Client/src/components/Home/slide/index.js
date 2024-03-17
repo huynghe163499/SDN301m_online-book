@@ -1,23 +1,28 @@
 import { BackwardOutlined, ForwardOutlined } from "@ant-design/icons";
 import { Card, Col, Row } from "antd";
-import Meta from "antd/es/card/Meta";
+// import Meta from "antd/es/card/Meta";
 import { useEffect, useState } from "react";
-import { Fade } from "react-slideshow-image";
+// import { Fade } from "react-slideshow-image";
 import { SlideContainer } from "./styled";
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
+import axios from "axios";
 
 
 
 const Slide = () => {
-    
     const [product, setProduct] = useState([])
+    const getList = async () => {
+        try {
+            const res = await axios.get('http://localhost:3001/products')
+            setProduct(res.data)
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
     useEffect(() => {
-        fetch('http://localhost:3001/products')
-            .then(resp => resp.json())
-            .then(data => {
-                setProduct(data)
-            })
-    }, []);
+        getList()
+    }, [])
 
     // const images = product.map((p, index) => ({
     //     url: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",

@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import { PageContainer } from "./styled";
 import { Card, Col, Pagination, Row } from "antd";
-import { RightOutlined } from "@ant-design/icons";
+import axios from "axios";
 
 const ListBook = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [product, setProduct] = useState([])
+
+    const getList = async () => {
+        try {
+            const res = await axios.get('http://localhost:3001/products')
+            setProduct(res.data)
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
     useEffect(() => {
-        fetch('http://localhost:3001/products')
-            .then(resp => resp.json())
-            .then(data => {
-                setProduct(data)
-            })
-    }, []);
+        getList()
+    }, [])
 
     const pageSize = 8;
     const startIndex = (currentPage - 1) * pageSize;
@@ -32,13 +38,16 @@ const ListBook = () => {
                     <>
                         <Col span={6} key={index} className="d-flex">
                             <Card
+                                className="zoom-on-hover"
                                 style={{
                                     width: '95%',
                                     cursor:'pointer',
                                     margin: 'auto',
                                 }}
                                 cover={
-                                    <div style={{
+                                    <div 
+                                    className="zoom-image"
+                                    style={{
                                         backgroundImage: `url('https://cdn.popsww.com/blog/sites/2/2021/03/doraemon-wiki-1920x1080-1920x1080.jpg')`,
                                         backgroundSize: 'cover', 
                                         backgroundPosition: 'center',
@@ -46,7 +55,7 @@ const ListBook = () => {
                                         position: 'relative',
                                     }}>
                                         <div style={{
-                                            backgroundColor: 'black', 
+                                            backgroundColor: '#565555', 
                                             opacity: '0.7', 
                                             height: '30px',
                                             position: 'absolute',
