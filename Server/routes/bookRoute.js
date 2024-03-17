@@ -1,17 +1,17 @@
 import express from 'express'
-const router = express.Router()
+
 import BookController from '../controllers/bookController.js'
 import upload from '../middlewares/clouddinary.middlewares.js'
-
-router.get('/getAllBooks',
-BookController.getAllBooks
+const router = express.Router()
+router.post('/getAllBooks',
+  BookController.getAllBooks
 )
 router.post('/insertBook',
   upload.single('avatar'),
   BookController.insertBook
 )
 router.get('/getDetailBook/:BookID',
-BookController.getDetailBook
+  BookController.getDetailBook
 )
 router.post('/deleteBook',
   BookController.deleteBook
@@ -21,10 +21,10 @@ router.put('/updateBook',
   BookController.updateBook
 )
 router.post('/getAllBooksByGenre',
-BookController.getAllBooksByGenre
+  BookController.getAllBooksByGenre
 )
 router.post('/getAllBooksByAuthor',
-BookController.getAllBooksByAuthor
+  BookController.getAllBooksByAuthor
 )
 router.post('/changeStatusBook',
   BookController.changeStatusBook
